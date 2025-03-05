@@ -42,8 +42,8 @@ Le projet de **Détection Automatique des Déchets Urbains** est une solution in
 ### 1. Clonage du Répertoire
 
 ```bash
-git clone <url_du_répertoire>
-cd <dossier_du_répertoire>
+git clone https://github.com/Moustapha14/trash-detection.git
+cd trash-detection
 ```
 
 ### 2. Configuration de l'Environnement Virtuel
