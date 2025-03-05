@@ -1,96 +1,152 @@
-
-```markdown
 # Système Automatique de Détection des Déchets Urbains 🗑️🏙️
 
 ## Introduction
 
-Ce projet propose un système automatique de détection des déchets dans un environnement urbain. En utilisant un modèle pré-entraîné YOLOv5 spécialement configuré pour la détection des déchets, ce système identifie et classe les déchets présents dans les images. Grâce à une interface web simple développée avec Flask, l'utilisateur peut charger une image et visualiser les résultats de détection (boîtes englobantes et scores de confiance). Ce projet vise à fournir un outil pratique pour la surveillance et la gestion des déchets en milieu urbain.
+Le projet de **Détection Automatique des Déchets Urbains** est une solution innovante qui utilise l'intelligence artificielle pour identifier et classifier les déchets dans les environnements urbains. En exploitant la puissance du modèle YOLOv5, ce système offre une approche technologique moderne pour la surveillance et la gestion des déchets.
 
-## Développement
+## Fonctionnalités Principales
 
-### Fonctionnalités
+### 🔍 Détection Intelligente
+- Utilisation du modèle YOLOv5 (`turhancan97/yolov5-detect-trash-classification`)
+- Détection précise et classification des différents types de déchets
+- Identification avec scores de confiance
 
-- **Détection des Déchets :**  
-  Utilisation du modèle YOLOv5 (`turhancan97/yolov5-detect-trash-classification`) pour détecter et classifier les déchets dans une image.
+### 🌐 Interface Web Conviviale
+- Application développée avec Flask
+- Chargement facile d'images
+- Visualisation intuitive des résultats de détection
 
-- **Interface Web :**  
-  Application web basée sur Flask permettant à l'utilisateur de charger une image et de visualiser le résultat de la détection.
+### 📊 Analyse Détaillée
+- Affichage côte à côte de l'image originale et traitée
+- Rapport détaillé incluant :
+  - Nombre total de déchets détectés
+  - Étiquettes de chaque déchet
+  - Scores de confiance
 
-- **Visualisation :**  
-  Affichage côte à côte de l'image originale et de l'image traitée (avec boîtes englobantes et labels), facilitant la comparaison.
+## Pile Technologique
 
-- **Rapport de Détection :**  
-  Affichage du nombre total de déchets détectés ainsi que des informations détaillées pour chaque détection (label et score).
+| Catégorie | Technologies |
+|-----------|--------------|
+| **Backend** | Python, Flask |
+| **Deep Learning** | PyTorch, YOLOv5 |
+| **Traitement d'Images** | OpenCV, Pillow, NumPy |
 
-### Pile Technologique
+## Prérequis
 
-- **Backend :** Python, Flask  
-- **Deep Learning :** PyTorch, YOLOv5  
-- **Traitement d'Images :** OpenCV, Pillow, NumPy  
-- **Déploiement :** Environnement Python local ou serveur
+- Python 3.8+
+- Connexion Internet (pour le téléchargement des dépendances)
+- Navigateur web
 
-### Installation
+## Installation
 
-1. **Cloner le Répertoire :**
+### 1. Clonage du Répertoire
 
-   ```bash
-   git clone <url_du_répertoire>
-   cd <dossier_du_répertoire>
-   ```
+```bash
+git clone <url_du_répertoire>
+cd <dossier_du_répertoire>
+```
 
-2. **Créer et Activer un Environnement Virtuel (Optionnel mais Recommandé) :**
+### 2. Configuration de l'Environnement Virtuel
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Sur Unix/MacOS
-   # ou
-   venv\Scripts\activate     # Sur Windows
-   ```
+```bash
+# Créer un environnement virtuel
+python -m venv venv
 
-3. **Installer les Dépendances :**
+# Activer l'environnement virtuel
+# Sur Unix/MacOS
+source venv/bin/activate
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Sur Windows
+venv\Scripts\activate
+```
 
-4. **Structure du Projet :**
+### 3. Installation des Dépendances
 
-   Votre projet doit être organisé comme suit :
+```bash
+pip install -r requirements.txt
+```
 
-   ```
-   project_folder/
-   ├── app.py
-   ├── deeplearning.py
-   ├── requirements.txt
-   ├── templates/
-   │   └── index.html
-   └── static/
-       ├── upload/
-       └── predict/
-   ```
+## Structure du Projet
 
-### Utilisation
+```
+project_folder/
+├── app.py                 # Application principale
+├── deeplearning.py        # Logique de détection
+├── requirements.txt       # Dépendances du projet
+├── templates/             # Modèles HTML
+│   ├── index.html         # Page principale
+│   └── layout.html        # Mise en page de base
+└── static/                # Ressources statiques
+    ├── upload/            # Images téléchargées
+    └── predict/           # Images traitées
+```
 
-1. **Lancer l'Application :**
+## Utilisation
 
-   ```bash
-   python app.py
-   ```
+### Lancement de l'Application
 
-2. **Accéder à l'Interface Web :**
+```bash
+python app.py
+```
 
-   Ouvrez votre navigateur et rendez-vous sur [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
+### Accès à l'Interface
 
-3. **Charger une Image :**
+1. Ouvrez votre navigateur
+2. Naviguez vers [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+3. Chargez une image contenant des déchets
 
-   Utilisez le formulaire pour charger une image. Le système traitera l'image et effectuera la détection des déchets.
+### Interprétation des Résultats
 
-4. **Visualiser les Résultats :**
+- **Image Originale :** Image source
+- **Image Traitée :** 
+  - Boîtes englobantes autour des déchets
+  - Étiquettes de classification
+  - Scores de confiance
 
-   - **Image Originale :** Affichée telle qu'elle a été chargée.
-   - **Image Traitée :** Montre les boîtes englobantes autour des déchets ainsi que les labels et scores.
-   - **Détails de Détection :** Un tableau récapitule le nombre de déchets détectés et présente les informations détaillées.
+## Perspectives d'Amélioration
 
-## Conclusion
+- Intégration de détection en temps réel
+- Raffinement du modèle de détection
+- Connexion avec des systèmes de gestion urbaine intelligents
 
-Ce projet démontre l'efficacité d'un système de détection automatique des déchets urbains en combinant des techniques avancées de vision par ordinateur et de deep learning. L'utilisation de YOLOv5 pour la détection, associée à une interface web conviviale basée sur Flask, offre une solution pratique pour la surveillance et la gestion des déchets en milieu urbain. Des améliorations futures pourraient inclure le traitement en temps réel, le raffinement du modèle et l'intégration avec des systèmes de gestion urbaine intelligents.
+## Contributions
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+- Signaler des problèmes
+- Proposer des améliorations
+- Soumettre des pull requests
+
+## Licence
+
+Ce projet est sous licence MIT.
+
+```
+MIT License
+
+Copyright (c) [année] [nom complet]
+
+Permission est accordée, gratuitement, à toute personne obtenant une copie
+de ce logiciel et des fichiers de documentation associés (le "Logiciel"), de traiter
+le Logiciel sans restriction, notamment les droits d'utilisation, de copie, de modification, 
+de fusion, de publication, de distribution, de sous-licencier et/ou de vendre des copies du Logiciel, 
+et de permettre aux personnes à qui le Logiciel est fourni de le faire, sous réserve des conditions suivantes :
+
+Le texte ci-dessus et cet avis de permission doivent être inclus dans toutes
+copies ou parties substantielles du Logiciel.
+
+LE LOGICIEL EST FOURNI "TEL QUEL", SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU
+IMPLICITE, NOTAMMENT SANS GARANTIE DE QUALITÉ MARCHANDE, D'ADÉQUATION À UN USAGE
+PARTICULIER ET D'ABSENCE DE CONTREFAÇON. EN AUCUN CAS, LES AUTEURS OU DÉTENTEURS DU
+COPYRIGHT NE SERONT RESPONSABLES DE TOUTE RÉCLAMATION, DOMMAGE OU AUTRE RESPONSABILITÉ,
+QUE CE SOIT DANS LE CADRE D'UN CONTRAT, D'UN DÉLIT OU AUTREMENT, EN RELATION AVEC LE
+LOGICIEL OU SON UTILISATION OU AUTRES INTERACTIONS AVEC CELUI-CI.
+```
+
+## Contact
+
+Pour plus d'informations, contactez [Votre Nom/Email]
+
+## Remerciements
+
+- Modèle YOLOv5 par Ultralytics
+- Contributeurs des bibliothèques open-source utilisées
