@@ -123,7 +123,7 @@ Ce projet est sous licence MIT.
 ```
 MIT License
 
-Copyright (c) [année] [nom complet]
+Copyright (c) [2024] [Bachar Moustapha]
 
 Permission est accordée, gratuitement, à toute personne obtenant une copie
 de ce logiciel et des fichiers de documentation associés (le "Logiciel"), de traiter
