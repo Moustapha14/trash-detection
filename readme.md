@@ -144,7 +144,7 @@ LOGICIEL OU SON UTILISATION OU AUTRES INTERACTIONS AVEC CELUI-CI.
 
 ## Contact
 
-Pour plus d'informations, contactez [Votre Nom/Email]
+Pour plus d'informations, contactez bacharadjao@gmail.com
 
 ## Remerciements
 
